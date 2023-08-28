@@ -16,7 +16,7 @@
 
 </script>
 
-<form action="" method="post">
+
 	<select name="lang" id="lang-select" bind:value={id} on:change={changeTexts}>
 		{#each texts as t}
 			<option value={t.id}>
@@ -24,16 +24,16 @@
 			</option>
 		{/each}
 	</select>
-</form>
+
 
 
 <style>
 	#lang-select {
-		position: absolute;
-        right: 20px;
+		/* position: absolute;
+        right: 20px; */
         border: none;
         outline: none;
         background-color: var(--clr-neutral);
-        color: #999;
+        color: var(--clr-accent_400);
 	}
 </style>
