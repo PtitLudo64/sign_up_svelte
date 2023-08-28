@@ -30,7 +30,7 @@
     //Browser Dark Mode?
     const isDarkMode = () =>
 	    globalThis.matchMedia?.("(prefers-color-scheme:dark)").matches ?? false;
-    // console.log(isDarkMode()? 'DARK' : 'LIGHT');
+
     window.onload = () => {
         if (!isDarkMode()) {
             document.querySelector('#mode').checked = true;
