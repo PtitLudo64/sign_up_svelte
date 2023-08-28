@@ -1,7 +1,7 @@
 {
   "name": "sign_up",
   "version": "1.0.0",
-  "private": false,
+  "private": true,
   "type": "module",
   "scripts": {
     "build": "rollup -c",

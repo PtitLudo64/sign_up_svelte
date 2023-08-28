@@ -3,7 +3,7 @@
 	import LangSelect from "./LangSelect.svelte";
 
 	let id=0;
-	const changeAllTexts= (event) => {
+	const changeAllTexts = (event) => {
 		id=event.detail.globalTexts.id;
 	}
     const changeMode = (e) => {
@@ -30,7 +30,14 @@
     //Browser Dark Mode?
     const isDarkMode = () =>
 	    globalThis.matchMedia?.("(prefers-color-scheme:dark)").matches ?? false;
-    console.log(isDarkMode()? 'DARK' : 'LIGHT');
+    // console.log(isDarkMode()? 'DARK' : 'LIGHT');
+    window.onload = () => {
+        if (!isDarkMode()) {
+            document.querySelector('#mode').checked = true;
+            changeMode();
+        }
+    }
+
 </script>
 
 
@@ -215,6 +222,10 @@
     border-bottom: 1px solid var(--clr-accent_200);
     padding: 0.5rem 0.2rem;
     background-color: var(--clr-neutral);
+    color: var(--clr-accent_900);
+}
+#rightSide #form input:not([type='submit'])::placeholder {
+    color: var(--clr-accent_900);
 }
 #rightSide #form input[type='submit'] {
     background-color: var(--clr-primary_700);
